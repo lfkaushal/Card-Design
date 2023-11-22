@@ -1,0 +1,158 @@
+/* main.css */
+
+/* 
+  * Libre Baskerville: 400 
+  * Roboto: 400, 500
+
+*/
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Roboto:wght@400;500&display=swap');
+
+/* Variables */
+:root {
+  --white: #ffffff;
+}
+
+/* Global styles */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+/* ALl heading tags - font Libre */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Libre Baskerville', serif;
+}
+
+body {
+  box-sizing: border-box;
+  line-height: 150%;
+  background-color: #343d33;
+  font-family: 'Roboto', sans-serif;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Container */
+.container {
+  margin: 0 auto;
+  max-width: 160rem;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+/* Card */
+.card {
+  margin: 0 2rem;
+  display: grid;
+  /* Divide into two rows making other auto row */
+  grid-template-rows: 40rem 40rem;
+  gap: 4rem;
+  padding: 2rem;
+}
+
+.card__title {
+  color: var(--white);
+  text-align: center;
+  font-size: 3.4rem;
+  line-height: 140%;
+  letter-spacing: 0.8px;
+  word-spacing: 4px;
+  text-transform: capitalize;
+  margin-bottom: 1.6rem;
+}
+
+.card__text {
+  color: var(--white);
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 150%;
+  margin: 0 auto;
+  margin-bottom: 4rem;
+  max-width: 80%;
+}
+
+.card__action {
+  text-align: center;
+}
+
+.card__action-btn {
+  padding: 1.5rem 3rem;
+  border: 2px solid var(--white);
+  color: var(--white);
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 2.1px;
+  text-transform: uppercase;
+  transition: all 0.2s linear;
+}
+
+.card__action-btn:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+@media screen and (min-width: 800px) {
+  .card {
+    margin: 0 4rem;
+    /* Change the height of the images */
+    grid-template-rows: 50rem 50rem;
+  }
+
+  .card__action,
+  .card__title,
+  .card__text {
+    text-align: left;
+    max-width: 100%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .card {
+    margin: 0 10rem;
+    /* Divide into two columns */
+    grid-template-columns: 50% 50%;
+    /* Change the height of the images */
+    grid-template-rows: 45rem 60rem;
+  }
+
+  .card__content {
+    /* Put content above last image */
+    order: 2;
+  }
+
+  .card__image-two {
+    order: 3;
+    /* Span across whole width */
+    grid-column: 1 / -1;
+  }
+}
