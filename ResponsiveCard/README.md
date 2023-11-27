@@ -1,4 +1,4 @@
-# Frontend Static Card
+# Frontend Responsive Card
 
 ### Live Link:
 
